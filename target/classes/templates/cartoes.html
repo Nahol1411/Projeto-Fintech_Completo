@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="br" class="h-full overflow-hidden">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tibar</title>
+  <link href="/css/output.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/tibar-logo_branca.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="h-full overflow-hidden flex flex-col">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+  <symbol id="icone-dashboard" viewBox="0 0 40 40" fill="none">
+    <rect x="3" y="1" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+    <rect x="23" y="1" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+    <rect x="3" y="21" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+    <rect x="23" y="21" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="icone-objetivos" viewBox="0 0 36 36" fill="none">
+    <path fill="currentColor" d="M35.028 5.962a1.25 1.25 0 0 0-.823-.9L31.05 4.01 29.995.854a1.25 1.25 0 0 0-2.069-.489L23.91 4.382a16.28 16.28 0 1 0 6.763 6.772l4.02-4.021a1.25 1.25 0 0 0 .335-1.171M16.31 32.499a13.75 13.75 0 1 1 6.298-25.945c.007.03.007.06.017.09l1 3.018-2.085 2.087a8.785 8.785 0 1 0 1.77 1.77l2.09-2.09 3.018 1c.026.009.055.006.082.014a13.698 13.698 0 0 1-12.19 20.056m6.25-13.75a6.27 6.27 0 1 1-2.809-5.209l-2.802 2.803a2.5 2.5 0 0 0-.639-.094 2.5 2.5 0 1 0 2.5 2.5 2.5 2.5 0 0 0-.094-.639l2.803-2.802a6.2 6.2 0 0 1 1.041 3.441m5.911-8.93L26.05 9.01l-.808-2.423 3.022-3.024.612 1.831a1.25 1.25 0 0 0 .79.791l1.83.61z"/>
+  </symbol>
+
+  <symbol id="icone-transacoes" viewBox="0 0 34 34" fill="none">
+    <path fill="currentColor" d="M18.333 23.34h-10a1.667 1.667 0 0 0 0 3.333h10a1.667 1.667 0 1 0 0-3.333m-6.666-10H15a1.666 1.666 0 1 0 0-3.333h-3.333a1.666 1.666 0 1 0 0 3.333m20 3.333h-5v-15a1.667 1.667 0 0 0-2.5-1.45l-5 2.867-5-2.867a1.67 1.67 0 0 0-1.667 0l-5 2.867-5-2.867A1.667 1.667 0 0 0 0 1.673V28.34a5 5 0 0 0 5 5h23.333a5 5 0 0 0 5-5v-10a1.667 1.667 0 0 0-1.666-1.667M5 30.007a1.667 1.667 0 0 1-1.667-1.667V4.557l3.334 1.9a1.8 1.8 0 0 0 1.666 0l5-2.867 5 2.867a1.8 1.8 0 0 0 1.667 0l3.333-1.9V28.34c.005.569.106 1.132.3 1.667zm25-1.667a1.667 1.667 0 0 1-3.333 0v-8.333H30zM18.333 16.673h-10a1.667 1.667 0 0 0 0 3.334h10a1.667 1.667 0 0 0 0-3.334"/>
+  </symbol>
+
+  <symbol id="icone-cartoes" viewBox="0 0 40 40" fill="none">
+    <path fill="currentColor" d="M10 26.667h6c.53 0 1.04-.281 1.414-.781.375-.5.586-1.179.586-1.886s-.21-1.386-.586-1.886c-.375-.5-.884-.78-1.414-.78h-6c-.53 0-1.04.28-1.414.78C8.21 22.614 8 23.293 8 24s.21 1.386.586 1.886c.375.5.884.78 1.414.78M34 0H6C4.409 0 2.883.843 1.757 2.343.632 3.843 0 5.878 0 8v24c0 2.122.632 4.157 1.757 5.657S4.41 40 6 40h28c1.591 0 3.117-.843 4.243-2.343C39.368 36.157 40 34.122 40 32V8c0-2.122-.632-4.157-1.757-5.657S35.59 0 34 0m2 32c0 .707-.21 1.386-.586 1.886-.375.5-.884.78-1.414.78H6c-.53 0-1.04-.28-1.414-.78C4.21 33.386 4 32.707 4 32V16h32zm0-21.333H4V8c0-.707.21-1.386.586-1.886.375-.5.884-.78 1.414-.78h28c.53 0 1.04.28 1.414.78.375.5.586 1.179.586 1.886z"/>
+  </symbol>
+
+  <symbol id="icone-configuracoes" viewBox="0 0 33 34" fill="none" preserveAspectRatio="xMidYMid meet">
+    <path fill="currentColor" d="M30.072 17.769a1.666 1.666 0 0 1 0-2.2l2.134-2.4a1.67 1.67 0 0 0 .2-1.95l-3.334-5.767a1.67 1.67 0 0 0-1.783-.8l-3.133.634a1.667 1.667 0 0 1-1.917-1.1l-1.017-3.05A1.67 1.67 0 0 0 19.64.002h-6.667a1.666 1.666 0 0 0-1.666 1.134l-.934 3.05a1.667 1.667 0 0 1-1.916 1.1L5.24 4.652a1.67 1.67 0 0 0-1.667.8L.24 11.22a1.67 1.67 0 0 0 .167 1.95l2.116 2.4a1.67 1.67 0 0 1 0 2.2l-2.116 2.4a1.67 1.67 0 0 0-.167 1.95l3.333 5.767a1.67 1.67 0 0 0 1.784.8l3.133-.634a1.667 1.667 0 0 1 1.917 1.1l1.016 3.05a1.67 1.67 0 0 0 1.667 1.134h6.667a1.67 1.67 0 0 0 1.583-1.134l1.017-3.05a1.667 1.667 0 0 1 1.916-1.1l3.134.634a1.67 1.67 0 0 0 1.783-.8l3.333-5.767a1.67 1.67 0 0 0-.2-1.95zm-2.483 2.233 1.333 1.5-2.133 3.7-1.967-.4a5 5 0 0 0-5.75 3.334l-.633 1.866h-4.267l-.6-1.9a5 5 0 0 0-5.75-3.333l-1.966.4-2.167-3.683 1.333-1.5a5 5 0 0 0 0-6.667l-1.333-1.5 2.133-3.667 1.967.4a5 5 0 0 0 5.75-3.333l.633-1.883h4.267l.633 1.9a5 5 0 0 0 5.75 3.333l1.967-.4 2.133 3.7-1.333 1.5a5 5 0 0 0 0 6.633m-11.283-10a6.667 6.667 0 1 0 0 13.335 6.667 6.667 0 0 0 0-13.335m0 10a3.333 3.333 0 1 1 0-6.667 3.333 3.333 0 0 1 0 6.667"/>
+  </symbol>
+
+  <symbol id="icone-suporte" viewBox="0 0 40 40" fill="none">
+      <path fill="currentColor" d="M28.38 6.042c.51.275 1.114.347 1.68.2a2.2 2.2 0 0 0 1.343-.979c.242-.405.62-.723 1.074-.903s.958-.213 1.433-.093.896.387 1.194.758c.298.37.458.825.455 1.29a2.05 2.05 0 0 1-.651 1.49 2.3 2.3 0 0 1-1.572.616c-.59 0-1.155.222-1.571.617a2.05 2.05 0 0 0-.652 1.488c0 .559.235 1.094.652 1.489.416.395.982.617 1.571.617a7 7 0 0 0 3.333-.848 6.5 6.5 0 0 0 2.44-2.313c.584-.96.892-2.05.891-3.158a6.06 6.06 0 0 0-.894-3.157 6.5 6.5 0 0 0-2.441-2.31A6.96 6.96 0 0 0 33.33 0c-1.17 0-2.32.292-3.334.846a6.5 6.5 0 0 0-2.44 2.312 2 2 0 0 0-.223 1.604c.077.268.209.52.388.739.18.22.403.404.658.541m9.557 15.01a2.3 2.3 0 0 0-1.64.419c-.466.339-.772.84-.85 1.392-.466 3.569-2.294 6.853-5.139 9.234-2.845 2.38-6.511 3.694-10.308 3.692H7.575l1.445-1.368a2.05 2.05 0 0 0 .646-1.484 2.05 2.05 0 0 0-.646-1.484c-2.167-2.061-3.642-4.683-4.239-7.537a14 14 0 0 1 .885-8.497c1.175-2.688 3.162-4.987 5.713-6.607A16.2 16.2 0 0 1 20 6.316c.59 0 1.155-.222 1.572-.617a2.05 2.05 0 0 0 .65-1.488 2.05 2.05 0 0 0-.65-1.49A2.3 2.3 0 0 0 20 2.106 20.83 20.83 0 0 0 9.39 5.04c-3.176 1.903-5.722 4.615-7.346 7.826A18.07 18.07 0 0 0 .207 23.19c.424 3.537 1.892 6.889 4.234 9.672L.641 36.4a2.07 2.07 0 0 0-.6 1.08 2 2 0 0 0 .133 1.215c.167.384.45.713.814.946s.792.357 1.23.359H20c4.871 0 9.575-1.682 13.23-4.733 3.653-3.05 6.007-7.258 6.619-11.835.04-.276.023-.556-.051-.825a2.1 2.1 0 0 0-.382-.742 2.2 2.2 0 0 0-.654-.546 2.3 2.3 0 0 0-.825-.266m-3.756-6.168a2.34 2.34 0 0 0-1.29-.147l-.4.126-.4.19-.333.273a2.1 2.1 0 0 0-.467.674 1.7 1.7 0 0 0-.178.842c-.006.28.047.56.156.821a2.24 2.24 0 0 0 1.214 1.128c.27.105.56.158.853.156.59 0 1.155-.221 1.572-.616a2.05 2.05 0 0 0 .65-1.489 1.7 1.7 0 0 0-.177-.8 2.32 2.32 0 0 0-1.2-1.137z"/>
+  </symbol>
+
+  <symbol id="icone_santander" viewBox="0 0 40 40 fill none">
+      <rect width="40" height="40" rx="15" fill="#BF0000"/>
+<path d="M23.287 23.77C21.3495 21.253 21.3495 17.747 23.287 15.23L28.4532 8.51902C32.5296 3.22362 41 6.1063 41 12.789V26.211C41 32.8937 32.5296 35.7764 28.4532 30.481L23.287 23.77Z" fill="#111112"/>
+  </symbol>
+
+  <symbol id="icone_itau" viewBox="0 0 40 40 fill none">
+    <rect width="40" height="40" rx="15" fill="#FF6200"/>
+    <path d="M23 23H40V25C40 33.2843 33.2843 40 25 40H23V23Z" fill="#0520B7"/>
+ </symbol>
+
+ <symbol id="icone_nubank" viewBox="0 0 40 40 fill none">
+    <rect width="40" height="40" rx="15" fill="#820AD1"/>
+ </symbol>
+
+  <symbol id="icone_bradesco" viewBox="0 0 40 40 fill none">
+      <rect width="40" height="40" rx="15" fill="#FF0000"/>
+      <rect x="31.4911" y="1" width="7.68135" height="44.0737" rx="2" transform="rotate(42 31.4911 1)" fill="white"/>
+  </symbol>
+
+  <symbol id="icone_menu" width="20" height="5" viewBox="0 0 20 5" fill="none">
+    <circle cx="4" cy="2.5" r="2.5" fill="black"/>
+    <circle cx="10" cy="2.5" r="2.5" fill="black"/>
+    <circle cx="16" cy="2.5" r="2.5" fill="black"/>
+  </symbol>
+
+  <symbol id="icone_plus" width="20" height="20" 
+                  viewBox="0 0 25 25" fill="none">
+    <rect x="11" width="3" height="25" rx="1.5" fill="#1E1E1E"/>
+    <rect x="25" y="11" width="3" height="25" rx="1.5" 
+            transform="rotate(90 25 11)" fill="#1E1E1E"/>
+
+
+  </symbol>
+
+  </svg>
+<header class="flex items-center justify-between bg-(--cinza_principal) border-b-2 border-b-(--branco) px-[15px] md:px-0 md:border-2 md:border-(--branco) md:border-b-0">
+
+
+  <div class="flex items-center px-[15px] py-[10px] my-[15px] md:ml-[25px] md:my-[25px] md:mr-[205px] barra shrink-0">
+    <img class="w-[35px] h-[35px] md:w-[50px] md:h-[50px] mr-[10px]" src="/images/tibar-logo_branca.png" alt="Logo da Tibar">
+    <h1 class="text-(--branco) text-[28px] md:text-[48px]">Tibar</h1>
+  </div>
+
+  <div class="hidden md:flex items-center px-[15px] py-[10px] mx-[25px] my-[25px] mr-[205px] barra">
+    <form class="flex items-center">
+      <input type="text" placeholder="Pesquisar"
+        class="bg-(--cinza_secundario) border-none rounded-[35px] text-(--branco)
+               leading-[40px] pt-[5px] pb-0 pl-[20px] pr-[100px]
+               placeholder:text-(--branco) placeholder:text-[24px] placeholder:text-left">
+    </form>
+    <button type="submit" class="bg-transparent border-none py-[2px] px-[11px] mx-[15px] hover:cursor-pointer hover:bg-(--ciano) hover:rounded-full">
+      <img class="w-[24px] h-[24px]" src="/images/Search.svg" alt="Ícone de pesquisa">
+    </button>
+  </div>
+
+<div class="flex items-center px-[15px] my-[15px] md:my-[25px] md:ml-[400px]
+            h-[70px] md:h-[70px] md:mr-[25px] box-border relative barra shrink-0">
+
+  <img class="w-[35px] h-[35px] md:w-[45px] md:h-[45px] rounded-full shrink-0 object-cover"
+       src="/images/user_icone.png" alt="Usuário">
+
+  <span class="text-(--branco) text-[14px] md:text-[24px] px-[8px] md:px-[15px] truncate max-w-[80px] md:max-w-none">
+    Lohan Caliari
+  </span>
+
+  <button class="bg-transparent border-none p-0 m-0 hover:cursor-pointer peer shrink-0 ml-[8px] md:ml-[25px]">
+    <img class="w-[12px] h-[8px] md:w-[15px] md:h-[10px]" src="/images/arrow_down.svg" alt="">
+  </button>
+
+  <ul class="hidden peer-hover:block w-[150px] bg-(--preto) border-2 border-(--branco)
+             rounded-[10px] p-[10px] list-none absolute top-full right-0 mt-[10px] z-50">
+    <li><a class="block text-(--branco) no-underline py-[5px] px-[10px] text-[18px] md:text-[24px]" href="#">Perfil</a></li>
+    <li><a class="block text-(--branco) no-underline py-[5px] px-[10px] text-[18px] md:text-[24px]" href="#">Sair</a></li>
+  </ul>
+</div>
+
+</header>
+<section class="flex flex-1 overflow-hidden w-full">
+
+  <aside class="hidden md:flex bg-(--cinza_principal) h-full 
+          w-[350px] border-2 border-(--branco) border-t-0 flex-col">
+    <nav class="flex-1 px-[15px] mt-[25px]">
+      <ul class="list-none p-0 m-0 flex flex-col gap-[5px]">
+      <li>
+        <a href="#" class="link-nav text-(--branco) hover:bg-(--ciano) hover:text-black transition-colors">
+         <svg class="w-[40px] h-[40px]">
+           <use href="#icone-dashboard"/>
+         </svg>
+          Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="link-nav text-(--branco) hover:bg-(--ciano) hover:text-black transition-colors">
+          <svg class="w-[40px] h-[40px]">
+            <use href="#icone-objetivos"/>
+          </svg>
+          Objetivos
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="link-nav text-(--branco) hover:bg-(--ciano) hover:text-black transition-colors">
+          <svg class="w-[40px] h-[40px]">
+            <use href="#icone-transacoes"/>
+          </svg>
+          Transações
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="cartoes" class="link-nav bg-(--ciano) text-black font-medium">
+          <svg class="w-[40px] h-[40px]">
+            <use href="#icone-cartoes"/>
+          </svg>
+          Cartões
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="link-nav text-(--branco) hover:bg-(--ciano) hover:text-black transition-colors">
+          <svg class="h-[40px] w-[40px]">
+            <use href="#icone-configuracoes"/>
+          </svg>
+          Configurações
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="link-nav text-(--branco) hover:bg-(--ciano) hover:text-black transition-colors">
+          <svg class="w-[40px] h-[40px]">
+            <use href="#icone-suporte"/>
+          </svg>
+          Suporte
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+</aside>
+    <main class="flex-1 min-w-0 bg-(--preto) p-[15px] md:p-[25px] overflow-y-auto pb-[80px] md:pb-[25px]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-[15px] md:gap-[20px] 
+            bg-(--cinza_principal) p-[10px] md:p-[20px] 
+            rounded-[15px] border-2 border-(--branco) md:max-w-[95%]">  
+            
+   
+<div class="card-cartao"> <!-- Cartão Santander -->
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-[10px]">
+               <svg class="w-[40px] h-[40px]"><use href="#icone_santander"/></svg>
+      <span class="text-black font-semibold text-[24px] leading-none">Santander</span>
+    </div>
+    <div class="flex items-center gap-[10px] text-black">
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[20px]"><use href="#icone_plus"/></svg></button>
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[5px]"><use href="#icone_menu"/></svg></button>
+    </div>
+  </div>
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Limite</p><p class="card-valor">R$ 15.000,00</p></div>
+    <div class="w-1/3"><p class="card-label">Em aberto</p><p class="card-valor">R$ 3.450,78</p></div>
+    <div class="w-1/3"><p class="card-label">Limite disp.</p><p class="card-valor">R$ 11.549,22</p></div>
+  </div>
+  <div class="card-barra">
+    <div class="bg-[#BF0000] h-[25px] rounded-full" style="width: 23%"></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Conta</p><p class="card-valor">Santander</p></div>
+    <div class="w-1/3"><p class="card-label">Fechamento</p><p class="card-valor">25/06</p></div>
+    <div class="w-1/3"><p class="card-label">Vencimento</p><p class="card-valor">05/07</p></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between items-center text-black">
+    <span class="text-[16px] md:text-[24px]">Fatura atual</span>
+    <span class="text-[18px] md:text-[24px] font-bold">R$ 3.450,78</span>
+  </div>
+  <div class="flex justify-between items-center">
+    <span class="card-badge bg-yellow-300 text-black">Fechada</span>
+    <button class="flex items-center gap-[5px] bg-transparent border-none cursor-pointer text-blue-500 text-[12px] md:text-[24px]">
+      <img src="/images/icone_check.svg" alt="" class="w-[16px] h-[16px]">
+      Registrar pagamento
+    </button>
+  </div>
+</div>
+
+<!-- Cartão Itáu -->
+<div class="card-cartao">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-[10px]">
+      <svg class="w-[40px] h-[40px]">
+        <use href="#icone_itau"/>
+      </svg>
+      <span class="text-black font-semibold text-[24px] leading-none">Itáu</span>
+    </div>
+    <div class="flex items-center gap-[10px] text-black">
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[20px]"><use href="#icone_plus"/></svg></button>
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[5px]"><use href="#icone_menu"/></svg></button>
+    </div>
+  </div>
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Limite</p><p class="card-valor">R$ 20.000,00</p></div>
+    <div class="w-1/3"><p class="card-label">Em aberto</p><p class="card-valor">R$ 4.194,12</p></div>
+    <div class="w-1/3"><p class="card-label">Limite disp.</p><p class="card-valor">R$ 15.805,88</p></div>
+  </div>
+  <div class="card-barra">
+    <div class="bg-[#FF6200] h-[25px] rounded-full" style="width: 21%"></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Conta</p><p class="card-valor">Itáu</p></div>
+    <div class="w-1/3"><p class="card-label">Fechamento</p><p class="card-valor">25/06</p></div>
+    <div class="w-1/3"><p class="card-label">Vencimento</p><p class="card-valor">05/07</p></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between items-center text-black">
+    <span class="text-[16px] md:text-[24px]">Fatura atual</span>
+    <span class="text-[18px] md:text-[24px] font-bold">R$ 4.194,12</span>
+  </div>
+  <div class="flex justify-between items-center">
+    <span class="card-badge bg-yellow-300 text-black">Fechada</span>
+    <button class="flex items-center gap-[5px] bg-transparent border-none cursor-pointer text-blue-500 text-[12px] md:text-[24px]">
+      <img src="/images/icone_check.svg" alt="" class="w-[16px] h-[16px]">
+      Registrar pagamento
+    </button>
+  </div>
+</div>
+
+<!-- Cartão Nubank -->
+<div class="card-cartao">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-[10px]">
+               <svg class="w-[40px] h-[40px]"><use href="#icone_nubank"/> </svg>
+      <span class="text-black font-semibold text-[24px] leading-none">Nubank</span>
+    </div>
+    <div class="flex items-center gap-[10px] text-black">
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[20px]"><use href="#icone_plus"/></svg></button>
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[5px]"><use href="#icone_menu"/></svg></button>
+    </div>
+  </div>
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Limite</p><p class="card-valor">R$ 1.000,00</p></div>
+    <div class="w-1/3"><p class="card-label">Em aberto</p><p class="card-valor">R$ 852,86</p></div>
+    <div class="w-1/3"><p class="card-label">Limite disp.</p><p class="card-valor">R$ 147,14</p></div>
+  </div>
+  <div class="card-barra">
+    <div class="bg-[#820AD1] h-[25px] rounded-full" style="width: 85%"></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Conta</p><p class="card-valor">Nubank</p></div>
+    <div class="w-1/3"><p class="card-label">Fechamento</p><p class="card-valor">28/06</p></div>
+    <div class="w-1/3"><p class="card-label">Vencimento</p><p class="card-valor">09/07</p></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between items-center text-black">
+    <span class="text-[16px] md:text-[24px]">Fatura atual</span>
+    <span class="text-[18px] md:text-[24px] font-bold">R$ 852,86</span>
+  </div>
+  <div class="flex justify-between items-center">
+    <span class="card-badge border border-black text-black">Aberta</span>
+    <button class="flex items-center gap-[5px] bg-transparent border-none cursor-pointer text-blue-500 text-[12px] md:text-[24px]">
+      <img src="/images/icone_check.svg" alt="" class="w-[16px] h-[16px]">
+      Registrar pagamento
+    </button>
+  </div>
+</div>
+
+<!-- Cartão Bradesco -->
+<div class="card-cartao">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-[10px]">
+               <svg class="w-[40px] h-[40px]">  <use href="#icone_bradesco"/></svg>
+      <span class="text-black font-semibold text-[24px] leading-none">Bradesco</span>
+    </div>
+    <div class="flex items-center gap-[10px] text-black">
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[20px]"><use href="#icone_plus"/></svg></button>
+      <button class="bg-transparent border-none cursor-pointer text-[20px]"><svg class="w-[20px] h-[5px]"><use href="#icone_menu"/></svg></button>
+    </div>
+  </div>
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Limite</p><p class="card-valor">R$ 25.000,00</p></div>
+    <div class="w-1/3"><p class="card-label">Em aberto</p><p class="card-valor">R$ 4.436,53</p></div>
+    <div class="w-1/3"><p class="card-label">Limite disp.</p><p class="card-valor">R$ 20.563,47</p></div>
+  </div>
+  <div class="card-barra">
+    <div class="bg-[#FF0000] h-[25px] rounded-full" style="width: 18%"></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between text-black">
+    <div class="w-1/3"><p class="card-label">Conta</p><p class="card-valor">Bradesco</p></div>
+    <div class="w-1/3"><p class="card-label">Fechamento</p><p class="card-valor">29/06</p></div>
+    <div class="w-1/3"><p class="card-label">Vencimento</p><p class="card-valor">10/07</p></div>
+  </div>
+  <hr class="card-divisor">
+  <div class="flex justify-between items-center text-black">
+    <span class="text-[16px] md:text-[24px]">Fatura atual</span>
+    <span class="text-[18px] md:text-[24px] font-bold">R$ 4.436,53</span>
+  </div>
+  <div class="flex justify-between items-center">
+    <span class="card-badge bg-green-400 text-black">Paga</span>
+    <button class="flex items-center gap-[5px] bg-transparent border-none cursor-pointer text-blue-500 text-[12px] md:text-[24px]">
+      <img src="/images/icone_check.svg" alt="" class="w-[16px] h-[16px]">
+      Registrar pagamento
+    </button>
+  </div>
+</div>
+</main>
+</div>
+</section>
+<nav class="fixed bottom-0 left-0 right-0 h-[65px] bg-(--cinza_principal) border-t-2 border-(--branco)
+            flex items-center justify-around md:hidden z-50">
+
+  <a href="#" class="nav_mobile">
+    <svg class="w-[24px] h-[24px]"><use href="#icone-dashboard"/></svg>
+    Dashboard
+  </a>
+
+  <a href="#" class="nav_mobile">
+    <svg class="w-[24px] h-[24px]"><use href="#icone-objetivos"/></svg>
+    Objetivos
+  </a>
+
+  <a href="#" class="nav_mobile">
+    <svg class="w-[24px] h-[24px]"><use href="#icone-transacoes"/></svg>
+    Transações
+  </a>
+
+  <a href="#" id="cartoes-mobile" class="nav_mobile text-(--ciano)">
+    <svg class="w-[24px] h-[24px]"><use href="#icone-cartoes"/></svg>
+    Cartões
+  </a>
+
+  <a href="#" class="nav_mobile">
+    <svg class="w-[24px] h-[24px]"><use href="#icone-configuracoes"/></svg>
+    Config.
+  </a>
+
+  <a href="#" class="nav_mobile">
+    <svg class="w-[24px] h-[24px]"><use href="#icone-suporte"/></svg>
+    Suporte
+  </a>
+
+</nav>
+</body>
+</html>
