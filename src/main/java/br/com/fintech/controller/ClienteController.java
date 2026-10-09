@@ -3,14 +3,21 @@ package br.com.fintech.controller;
 // Importa a classe Cliente do pacote model
 import br.com.fintech.model.Cliente;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/clientes")
+@Controller
+@RequestMapping("/")
 @CrossOrigin(origins = "*")
 public class ClienteController {
 
-    @PostMapping
+    @GetMapping("/cartoes")
+    public String exibirCartoes() {
+        return "cartoes";
+    }
+
+    @PostMapping("/clientes")
+    @ResponseBody
     public Cliente cadastrar(@RequestBody Cliente cliente) {
         System.out.println("\n--- NOVO CLIENTE RECEBIDO ---");
 
