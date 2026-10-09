@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+
+
+:root {
+--fonte_principal: 'Urbanist', sans-serif;
+--cinza_principal: #242425;
+--preto: #000000;
+--ciano: #82E5F9;
+--cinza_secundario: #373737;
+--branco: #FFFFFF;
+
+}
+
+@utility barra {
+  height: 70px;
+  border-radius: 35px;
+  border: 2px solid var(--branco);
+  background-color: var(--preto);
+  box-sizing: border-box;
+}
+
+@utility link-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 20px;
+  font-size: 24px;
+  text-decoration: none;
+  border-radius: 12px;
+  width: 85%;
+  margin: 10px
+}
+
+@utility card-cartao {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+@utility card-label {
+  font-size: 18px;
+  color: rgb(107 114 128);
+    @media (width >= 768px) {
+    font-size: 28px;
+  }
+}
+
+
+@utility card-divisor {
+  border-style: dashed;
+  border-color: rgb(156 163 175);
+}
+
+@utility card-valor {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+    @media (width >= 768px) {
+    font-size: 24px;
+  }
+}
+
+@utility card-barra {
+  width: 100%;
+  background-color: #D9D9D9;
+  border-radius: 9999px;
+  height: 25px;
+}
+
+@utility card-badge {
+  font-size: 18px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+@utility nav_mobile {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 4px;
+ color: var(--branco);
+ text-decoration: none;
+ font-size: 12px;
+ padding: 5px;
+}
+
+body {
+font-family: var(--fonte_principal);
+font-weight: 400;
+}
+
+.cabecalho {
+    background-color: var(--cinza_principal);
+    display:flex;
+    border: 2px solid var(--branco);
+}
+
+
+/*Estilização do conteiner da Logo*/
+.logo { 
+    display:flex;
+    padding: 10px 15px;
+    margin: 25px 205px 30px 25px;
+    background-color: var(--preto);
+    border-radius: 25px;
+    border: 2px solid var(--branco);
+    box-sizing: border-box;
+    height: 70px;
+
+}
+
+.logo_tibar {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+}
+.titulo_logo {
+    color: var(--branco);
+    font-size: 48px;
+    padding-right: 20px;
+}
+
+/*Estilização do formulário de pesquisa*/
+.barra_pesquisa {
+    display: flex;
+    padding: 10px 15px;
+    margin: 25px 205px 30px 25px;
+    background-color: var(--preto);
+    border-radius: 35px;
+    border: 2px solid var(--branco);
+}
+
+.form_pesquisa {
+    display: flex;
+    align-items: center;
+
+}
+
+.input_pesquisa {
+    background-color: var(--cinza_secundario);
+    border: none;
+    border-radius: 35px;
+    color: var(--branco);
+    line-height: 40px;
+    padding: 5px 100px 0 15px;
+}
+
+.input_pesquisa::placeholder {
+    color: var(--branco);
+    font-size: 24px;
+    text-align: left;
+}
+
+.botao_pesquisa {
+    background-color: transparent;
+    border-style: none;
+    padding: 2px 11px;
+    margin: 0 15px;
+}
+
+.botao_pesquisa img {
+    width: 24px;
+    height: 24px;
+}
+
+.botao_pesquisa:hover {
+    cursor: pointer;
+    background-color: var(--ciano);
+    border-radius: 50%;
+}
+
+
+/*Estilização da barra do usuário*/
+.barra_usuario {
+    display: flex;
+    padding: 0px 15px;
+    margin: 25px 20px 25px 500px;
+    background-color: var(--preto);
+    border-radius: 35px;
+    border: 2px solid var(--branco);
+    align-items: center;
+    height: 70px;
+    width: 420px;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+
+.icone_usuario {
+    width: 50px;
+    height: 50px;
+    padding: 0 15px;
+}
+
+.icone_usuario img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.nome_usuario {
+    color: var(--branco);
+    font-size: 24px;
+    padding: 0 15px;
+}
+
+.seta_usuario {
+    width: 15px;
+    height: 10px;
+    padding-top: 5px;
+    margin-left: 50px;
+}
+
+.botao_usuario {
+    background-color: transparent;
+    border-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.botao_usuario:hover {
+    cursor: pointer;
+}
+
+.botao_usuario:hover + .menu_usuario {
+    display: block;
+    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.menu_usuario {
+    display: none;
+    width: 150px;
+    background-color: var(--preto);
+    border: 2px solid var(--branco);
+    border-radius: 10px;
+    padding: 10px;
+    list-style: none;
+}
+
+.link_menu {
+    display: block;
+    color: var(--branco);
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 24px;
+}
