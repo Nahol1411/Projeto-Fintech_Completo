@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .bg-black {
+    background-color: #000000 !important;
+  }
+  .text-white {
+    color: #ffffff !important;
+  }
+  .w-\[20px\] {
+    width: 20px !important;
+  }
+  .h-\[20px\] {
+    height: 20px !important;
+  }
+  .w-5 {
+    width: 20px !important;
+  }
+  .h-5 {
+    height: 20px !important;
+  }
+}
+
+
+/* Forçando classes do Tailwind que não estão sendo detectadas */
+.bg-black {
+    background-color: #000000 !important;
+}
+.text-white {
+    color: #ffffff !important;
+}
+.w-5 {
+    width: 20px !important;
+}
+.h-5 {
+    height: 20px !important;
+}
+
+
+
 
 
 :root {

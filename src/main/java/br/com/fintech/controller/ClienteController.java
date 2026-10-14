@@ -16,6 +16,12 @@ public class ClienteController {
         return "cartoes";
     }
 
+    @GetMapping("/login")
+    public String exibirlogin() {
+        return "login";
+    }
+
+
     @PostMapping("/clientes")
     @ResponseBody
     public Cliente cadastrar(@RequestBody Cliente cliente) {
