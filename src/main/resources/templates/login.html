@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="br" class="h-full overflow-hidden">
+<html lang="br" class="h-full overflow-y-auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,48 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="h-full font-urbanist bg-(--preto)">
-  
-  <div class="flex items-center px-[15px] py-[10px] my-[15px] md:ml-[25px] md:my-[25px] md:mr-[205px] shrink-0">
-    <img class="w-[100px] h-[100px] md:w-[50px] md:h-[50px] mr-[10px]" src="/images/tibar-logo_branca.png" alt="Logo da Tibar">
-    <h1 class="text-(--branco) text-[64px]">Tibar</h1>
-  </div>
-  <img class="w-[1100px] h-full" src="/images/bg-login.png" alt="Imagem de login">
+<body class="min-h-screen w-full overflow-x-hidden font-urbanist text-[24px]">
 
+  <div class="relative min-h-screen w-full bg-(--preto) theme-login md:bg-page-container">
+
+   <div class="bg-gradient-overlay"> </div>
+   <div class="content-layer flex w-full justify-center md:justify-start items-center shrink-0 px-6 md:px-0 md:ml-[50px] pt-6 md:pt-[25px] md:pl-[50px] gap-[15px]">
+    <img class="w-[100px] h-[100px]" src="/images/tibar-logo_branca.png" alt="Logo da Tibar">
+    <h1 class="text-(--branco) text-[48px] md:text-[64px]">Tibar</h1>
+  </div>
+
+  <section class="content-layer flex flex-col justify-normal mx-auto md:ml-[200px] gap-[15px] px-6 md:px-0">
+
+    <h2 class="text-(--branco) text-[32px] md:text-[48px] pt-[25px] text-center md:text-left">Bem-vindo de volta! &#128075</h2>
+
+    <form class="flex flex-col justify-center gap-[15px] w-full max-w-[450px] md:w-[35%] mx-auto md:mx-0" th:action="@{/login}" method="post">
+      <p class="text-(--branco)">Email:</p>
+      <input class="campo_input" type="text" name="username" placeholder="exemplo@email.com" required>
+      <p class="text-(--branco)">Senha:</p>
+      <input class="campo_input" type="password" name="password" placeholder="Pelo menos 8 caracteres" required> 
+      <p class="text-(--branco)">Esqueceu sua senha? <a class="text-(--branco) hover:text-(--ciano)" href="#">Clique aqui</a></p>
+      
+        <div class="flex flex-col sm:flex-row justify-between pt-[50px] gap-4">
+            <button class="w-full sm:w-[45%] py-[7.5px] bg-(--cinza_principal) text-(--branco) border-solid border-[2px] border-(--ciano) rounded-[15px] hover:bg-(--ciano) hover:text-(--preto) hover:border-(--preto)" type="submit">Entrar</button>  
+            <button class="w-full sm:w-[45%] py-[7.5px] bg-(--ciano) text-(--preto) border-solid border-[2px] border-(--branco)  rounded-[15px]  hover:bg-(--branco)" type="button" onclick="window.location.href='/cadastro'">Crie uma conta</button>
+       </div>
+
+        <div class="flex items-center my-6">
+          <hr class="flex-grow border-t border-(--branco)">
+          <span class="px-3 text-[24px] text-(--branco) uppercase">ou</span>
+          <hr class="flex-grow border-t border-(--branco)">
+        </div>
+
+        <button class="campo_input pr-[15px] flex items-center justify-center mb-[20px] hover:bg-(--cinza_principal)" type="button" onclick="window.location.href='/login/google'">
+          <img class="inline-block w-[40px] h-[40px] mr-[10px]" src="/images/logo_google.svg" alt="Logo do Google">
+          Entrar com uma conta Google
+        </button>
+
+        <button class="campo_input pr-[15px] flex items-center justify-center mb-[20px] hover:bg-(--cinza_principal)" type="button" onclick="window.location.href='/login/google'">
+          <img class="inline-block w-[40px] h-[40px] mr-[10px]" src="/images/logo_microsoft.svg" alt="Logo do Microsoft">
+          Entrar com uma conta Microsoft
+        </button>
+      </form> 
+    </section>
+  </div>
 </body>

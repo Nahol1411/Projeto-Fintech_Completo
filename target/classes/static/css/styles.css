@@ -1,53 +1,19 @@
 @import "tailwindcss";
-
-@layer utilities {
-  .bg-black {
-    background-color: #000000 !important;
-  }
-  .text-white {
-    color: #ffffff !important;
-  }
-  .w-\[20px\] {
-    width: 20px !important;
-  }
-  .h-\[20px\] {
-    height: 20px !important;
-  }
-  .w-5 {
-    width: 20px !important;
-  }
-  .h-5 {
-    height: 20px !important;
-  }
-}
-
-
-/* Forçando classes do Tailwind que não estão sendo detectadas */
-.bg-black {
-    background-color: #000000 !important;
-}
-.text-white {
-    color: #ffffff !important;
-}
-.w-5 {
-    width: 20px !important;
-}
-.h-5 {
-    height: 20px !important;
-}
-
-
-
-
+@tailwind utilities;
 
 :root {
 --fonte_principal: 'Urbanist', sans-serif;
 --cinza_principal: #242425;
---preto: #000000;
+--preto: #111112;
 --ciano: #82E5F9;
 --cinza_secundario: #373737;
 --branco: #FFFFFF;
+--gradiente_bg: linear-gradient(90deg,rgba(17, 17, 18, 1) 20%, rgba(17, 17, 18, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
 
+@utility content-layer {
+  position: relative;
+  z-index: 10;
 }
 
 @utility barra {
@@ -128,10 +94,45 @@
  padding: 5px;
 }
 
+@utility campo_input {
+  background-color: var(--cinza_secundario);
+  border: solid 2px var(--branco);
+  border-radius: 15px;
+  color: var(--branco);
+  line-height: 40px;
+  padding: 7.5px 100px 7.5px 15px;
+}
+
+
+@utility hover-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+@layer base {
+  * {
+
+}
+
+  /* Garante que links, botões e elementos com a variante hover mudem o cursor */
+  a:hover, 
+  button:hover, 
+  [class*="hover:"]:hover {
+    cursor: pointer; 
+  }
+}
+
+
 body {
 font-family: var(--fonte_principal);
 font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: var(--preto);
 }
+
 
 .cabecalho {
     background-color: var(--cinza_principal);
@@ -292,4 +293,35 @@ font-weight: 400;
     text-decoration: none;
     padding: 5px 10px;
     font-size: 24px;
+}
+
+@utility bg-page-container {
+  background-image: var(--page-image);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto 100%;
+}
+
+@utility bg-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.theme-login {
+  --page-image: url('/images/bg-login.png');
+}
+
+.theme-login .bg-gradient-overlay {
+  background-image: linear-gradient(90deg, rgba(17, 17, 18, 1) 50%, rgba(17, 17, 18, 0) 90%);
+}
+
+.theme-cadastro {
+  --page-image: url('/images/bg-cadastro.png');
+}
+
+.theme-cadastro .bg-gradient-overlay {
+  background-image: linear-gradient(90deg, rgba(17, 17, 18, 1) 75%, rgba(17, 17, 18, 0) 90%);
 }

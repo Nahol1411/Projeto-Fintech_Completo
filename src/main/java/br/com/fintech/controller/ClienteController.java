@@ -21,6 +21,11 @@ public class ClienteController {
         return "login";
     }
 
+    @GetMapping("/cadastro")
+    public String exibirCadastro() {
+        return "cadastro";
+    }
+
 
     @PostMapping("/clientes")
     @ResponseBody
