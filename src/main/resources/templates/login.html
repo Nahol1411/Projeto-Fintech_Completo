@@ -7,8 +7,8 @@
   <link href="/css/main-style.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/images/tibar-logo_branca.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="min-h-screen w-full overflow-x-hidden font-urbanist text-[24px]">
 
@@ -25,14 +25,14 @@
     <h2 class="text-(--branco) text-[32px] md:text-[48px] pt-[25px] text-center md:text-left">Bem-vindo de volta! &#128075</h2>
 
     <form class="flex flex-col justify-center gap-[15px] w-full max-w-[450px] md:w-[35%] mx-auto md:mx-0" th:action="@{/login}" method="post">
-      <p class="text-(--branco)">Email:</p>
-      <input class="campo_input" type="text" name="username" placeholder="exemplo@email.com" required>
-      <p class="text-(--branco)">Senha:</p>
-      <input class="campo_input" type="password" name="password" placeholder="Pelo menos 8 caracteres" required> 
+      <label for="login-email" class="text-(--branco)">Email:</label>
+      <input id="login-email" class="campo_input" type="email" name="username" placeholder="exemplo@email.com" required>
+      <label for="login-password" class="text-(--branco)">Senha:</label>
+      <input id="login-password" class="campo_input" type="password" name="password" placeholder="Pelo menos 8 caracteres" required>
       <p class="text-(--branco)">Esqueceu sua senha? <a class="text-(--branco) hover:text-(--ciano)" href="#">Clique aqui</a></p>
-      
+
         <div class="flex flex-col sm:flex-row justify-between pt-[50px] gap-4">
-            <button class="w-full sm:w-[45%] py-[7.5px] bg-(--cinza_principal) text-(--branco) border-solid border-[2px] border-(--ciano) rounded-[15px] hover:bg-(--ciano) hover:text-(--preto) hover:border-(--preto)" type="submit">Entrar</button>  
+            <button class="w-full sm:w-[45%] py-[7.5px] bg-(--cinza_principal) text-(--branco) border-solid border-[2px] border-(--ciano) rounded-[15px] hover:bg-(--ciano) hover:text-(--preto) hover:border-(--preto)" type="submit">Entrar</button>
             <button class="w-full sm:w-[45%] py-[7.5px] bg-(--ciano) text-(--preto) border-solid border-[2px] border-(--branco)  rounded-[15px]  hover:bg-(--branco)" type="button" onclick="window.location.href='/cadastro'">Crie uma conta</button>
        </div>
 
@@ -47,11 +47,12 @@
           Entrar com uma conta Google
         </button>
 
-        <button class="campo_input pr-[15px] flex items-center justify-center mb-[20px] hover:bg-(--cinza_principal)" type="button" onclick="window.location.href='/login/google'">
+        <button class="campo_input pr-[15px] flex items-center justify-center mb-[20px] hover:bg-(--cinza_principal)" type="button" onclick="window.location.href='/login/microsoft'">
           <img class="inline-block w-[40px] h-[40px] mr-[10px]" src="/images/logo_microsoft.svg" alt="Logo do Microsoft">
           Entrar com uma conta Microsoft
         </button>
-      </form> 
+      </form>
     </section>
   </div>
 </body>
+</html>
